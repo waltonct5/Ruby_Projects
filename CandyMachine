@@ -1,0 +1,84 @@
+#Welcome message
+ 
+puts "Welcome to Chloe's Digital Snack Machine! Get your chips and bits!"
+puts "\n"
+ 
+#Find out starting currency
+ 
+puts "How much money do you have to spend on snacks?"
+puts "\n"
+ 
+starting_money = gets.chomp
+ 
+if starting_money.to_f <= 0
+  puts "Sorry, you have no money, come back once you do!"
+else
+  puts "$" + starting_money + "?" + " OK! Hopefully I have something for you to buy with that " + "$" + starting_money + "!"
+  puts "\n"
+ 
+  #Give the snack options for purchase
+ 
+  puts "Here are the snacks available for purchase:"
+  puts "\n"
+ 
+  puts "A: Kit Kat = $0.75"
+  puts "B: Cheetos = $1.00"
+  puts "C: Lifesavers = $0.25"
+  puts "D: Butterfinger King Size = $1.50"
+  puts "E: Doritos = $1.00"
+  puts "F: Trail Mix = $1.50"
+  puts "G: Redhot Gum = $0.50"
+  puts "\n"
+ 
+  #Obtain their selection
+ 
+  puts "What would you like to purchase?"
+  puts "\n"
+ 
+  purchase = gets.chomp
+ 
+  #Change purchase from string into float and confirm approved selection
+ 
+  if purchase == "A"
+    purchase = 0.75
+  elsif purchase == "B"
+   purchase = 1.00
+  elsif purchase == "C"
+    purchase = 0.25
+  elsif purchase == "D"
+    purchase = 1.50
+  elsif purchase == "E"
+    purchase = 1.00
+  elsif purchase == "F"
+    purchase = 1.50
+  elsif purchase == "G"
+    purchase = 0.50
+  elsif purchase == "a"
+    purchase = 0.75
+  elsif purchase == "b"
+    purchase = 1.00
+  elsif purchase == "c"
+    purchase = 0.25
+  elsif purchase == "d"
+    purchase = 1.50
+  elsif purchase == "e"
+    purchase = 1.00
+  elsif purchase == "f"
+    purchase = 1.50
+  elsif purchase == "g"
+    purchase = 0.50
+  else
+    puts "That is not a valid input. Please make a selection from A to G."
+  end
+ 
+if purchase.to_f > 0
+  if purchase <= starting_money.to_f
+      puts "\n"
+      candy_change = starting_money.to_f - purchase
+      puts "Wonderful selection! Thank you for purchasing from Chloe's Snack Machine! Please take your snack and your $#{candy_change} change."
+    else
+      puts "\n"
+      puts "Sorry, you do not have enough money for that selection."
+    end
+  end
+end
